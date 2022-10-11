@@ -1,0 +1,16 @@
+#add-room-form {
+    background-color: floralwhite;
+    display: grid;
+    width: 500px;
+    border: darkolivegreen 10px outset;
+    border-radius: 25px;
+    justify-content: center;
+}
+
+#create-room-button {
+    background-color: darkolivegreen;
+}
+
+#image-placeholder {
+    width: 100px;
+}

@@ -11,7 +11,10 @@
         <link rel="icon" type="image/x-icon" href="../assets/alchemy-favicon.png" />
 
         <!-- js -->
-        <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+        ></script>
         <script type="module" src="add-room.js"></script>
 
         <!-- fonts -->
@@ -26,6 +29,7 @@
         <link rel="stylesheet" href="../styles/reset.css" />
         <link rel="stylesheet" href="../styles/global.css" />
         <!-- add link for page specific css -->
+        <link rel="stylesheet" href="../styles/add-room.css" />
         <link rel="stylesheet" href="../styles/form.css" />
     </head>
 
@@ -53,9 +57,9 @@
                     ></textarea>
                 </label>
                 <label>
-                    <input type="file" name="image" />
+                    <input type="file" id="image-input" name="image" />
                 </label>
-                <img src="../assets/placeholder.png" />
+                <img id="image-placeholder" src="../assets/placeholder.png" />
                 <button id="create-room-button">Create Room</button>
             </form>
             <p id="error-display"></p>
