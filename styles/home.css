@@ -1,0 +1,27 @@
+li {
+    background: floralwhite;
+    border: darkolivegreen 10px outset;
+}
+
+li img {
+    object-fit: contain;
+    width: 100%;
+    height: 200px;
+    padding-bottom: 30px;
+}
+
+#room-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+    grid-auto-rows: 400px;
+    gap: 25px;
+}
+
+li h2 {
+    text-align: center;
+}
+
+li p {
+    padding: 10px;
+    text-align: center;
+}
