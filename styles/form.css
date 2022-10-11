@@ -63,7 +63,7 @@ form button:disabled {
     opacity: 0.5;
 }
 
-#add-room {
+#add-room-form {
     background-color: floralwhite;
     display: grid;
     width: 500px;

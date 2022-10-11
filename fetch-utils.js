@@ -28,3 +28,7 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+
+export async function createRoom(room) {
+    return await client.from('rooms').insert(room);
+}
