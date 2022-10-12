@@ -1,5 +1,7 @@
 export function renderRoom(room) {
     const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = `/chatroom/?id=${room.id}`;
 
     const h2 = document.createElement('h2');
     h2.textContent = room.name;
@@ -10,7 +12,9 @@ export function renderRoom(room) {
     const img = document.createElement('img');
     img.src = room.image_url;
 
-    li.append(h2, p, img);
+    a.append(h2, p, img);
+
+    li.append(a);
 
     return li;
 }
