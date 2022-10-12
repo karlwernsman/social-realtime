@@ -1,12 +1,14 @@
 //import
 import '../auth/user.js';
-import { getRoom } from '../fetch-utils.js';
+import { getRoom, createMessage } from '../fetch-utils.js';
 
 // DOM
 const errorDisplay = document.getElementById('error-display');
 const roomName = document.getElementById('room-name');
 const roomDescription = document.getElementById('room-description');
 const roomImage = document.getElementById('room-image');
+const messageForm = document.getElementById('message-form');
+
 // State
 
 let error = null;
@@ -28,11 +30,23 @@ window.addEventListener('load', async () => {
     room = response.data;
 
     if (error) {
-        alert(error.message + '. ' + 'Please contact the administrator for more information.');
-        location.replace('/');
+        displayError();
     } else {
         displayRoom();
     }
+});
+
+messageForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(messageForm);
+    const insertMessage = {
+        message: formData.get('message'),
+        room_id: room.id,
+    };
+
+    const response = await createMessage(insertMessage);
+    error = response.error;
 });
 
 // Display functions

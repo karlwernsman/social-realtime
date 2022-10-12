@@ -58,3 +58,7 @@ export async function getRoom(id) {
         .order('created_at', { foreignTable: 'chat', ascending: false })
         .single();
 }
+
+export async function createMessage(message) {
+    return await client.from('chat').insert(message).single();
+}
