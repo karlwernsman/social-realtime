@@ -49,3 +49,12 @@ export async function uploadImage(bucketName, imagePath, imageFile) {
 export async function getRooms() {
     return await client.from('rooms').select('*');
 }
+
+export async function getRoom(id) {
+    return await client
+        .from('rooms')
+        .select('*, chat(*)')
+        .eq('id', id)
+        .order('created_at', { foreignTable: 'chat', ascending: false })
+        .single();
+}
