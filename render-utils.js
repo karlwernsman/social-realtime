@@ -18,3 +18,11 @@ export function renderRoom(room) {
 
     return li;
 }
+
+export function renderMessage(message) {
+    const li = document.createElement('li');
+    console.log(message);
+    li.textContent = message.message;
+
+    return li;
+}

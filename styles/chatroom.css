@@ -1,6 +1,6 @@
 main {
-    display: grid;
-    grid-template-rows: auto 2px auto 1fr;
+    /* display: grid; */
+    /* grid-template-rows: auto 2px auto 1fr; */
     gap: 10px;
 }
 
@@ -46,4 +46,11 @@ button {
 
 #message-list li {
     background: floralwhite;
+    border: darkolivegreen 5px outset;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+#message-list {
+    height: 250px;
 }
