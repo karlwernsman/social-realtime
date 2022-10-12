@@ -11,24 +11,28 @@ main {
         'image name'
         'image description';
     background: floralwhite;
-    border: darkolivegreen 10px outset;
+    border: darkolivegreen 7px outset;
+    height: 400px;
+    align-items: center;
 }
 
 #room-name {
     grid-area: name;
-    /* align-self: center; */
 }
 
 #room-image {
     grid-area: image;
-    width: 100%;
-    height: 100%;
+    width: 175px;
     object-fit: contain;
-    padding: 25px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-self: center;
 }
 
 #room-description {
     grid-area: description;
+    align-self: center;
 }
 
 #message-form {
@@ -45,12 +49,18 @@ button {
 }
 
 #message-list li {
-    background: floralwhite;
-    border: darkolivegreen 5px outset;
-    margin-bottom: 5px;
+    background: rgb(249, 248, 245);
+    margin: 10px;
     padding: 5px;
+    border-radius: 25px;
+    width: fit-content;
 }
 
 #message-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: darkolivegreen 3px outset;
+    padding-top: 20px;
+    background-color: rgb(199, 196, 154);
     height: 250px;
 }

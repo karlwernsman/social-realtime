@@ -83,7 +83,6 @@ function displayMessages() {
     messageList.innerHTML = '';
     for (const message of room.chat) {
         const messageEl = renderMessage(message, user.id);
-        console.log(messageList);
         messageList.append(messageEl);
     }
 }
