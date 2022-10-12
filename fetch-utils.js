@@ -62,3 +62,11 @@ export async function getRoom(id) {
 export async function createMessage(message) {
     return await client.from('chat').insert(message).single();
 }
+
+export function realTime(roomId, messageUpload) {
+    client.from(`chat:room_id=eq.${roomId}`).on('INSERT', messageUpload).subscribe();
+}
+
+export async function getMessage(id) {
+    return await client.from('chat').select('*').eq('id', id).single();
+}

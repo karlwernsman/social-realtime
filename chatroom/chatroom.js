@@ -1,6 +1,6 @@
 //import
 import '../auth/user.js';
-import { getRoom, createMessage, getUser } from '../fetch-utils.js';
+import { getRoom, createMessage, getUser, getMessage, realTime } from '../fetch-utils.js';
 import { renderMessage } from '../render-utils.js';
 
 // DOM
@@ -38,6 +38,18 @@ window.addEventListener('load', async () => {
         displayRoom();
         displayMessages();
     }
+    realTime(room.id, async (payload) => {
+        const messageId = payload.new.id;
+        const chatResponse = await getMessage(messageId);
+        error = chatResponse.error;
+        if (error) {
+            displayError();
+        } else {
+            const message = chatResponse.data;
+            room.chat.unshift(message);
+            displayMessages();
+        }
+    });
 });
 
 messageForm.addEventListener('submit', async (e) => {
@@ -52,15 +64,7 @@ messageForm.addEventListener('submit', async (e) => {
     const response = await createMessage(insertMessage);
     error = response.error;
 
-    if (error) {
-        displayError();
-    } else {
-        const message = response.data;
-        room.chat.unshift(message);
-        displayMessages();
-
-        messageForm.reset();
-    }
+    messageForm.reset();
 });
 
 // Display functions

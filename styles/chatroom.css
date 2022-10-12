@@ -62,5 +62,6 @@ button {
     border: darkolivegreen 3px outset;
     padding-top: 20px;
     background-color: rgb(199, 196, 154);
-    height: 250px;
+    min-height: 250px;
+    padding-bottom: 20px;
 }

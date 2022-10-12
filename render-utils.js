@@ -21,7 +21,6 @@ export function renderRoom(room) {
 
 export function renderMessage(message) {
     const li = document.createElement('li');
-    console.log(message);
     li.textContent = message.message;
 
     return li;
