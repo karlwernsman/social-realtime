@@ -1,6 +1,6 @@
 //import
 import '../auth/user.js';
-import { getRoom, createMessage, getUser, getMessage, realTime } from '../fetch-utils.js';
+import { getRoom, createMessage, getMessage, realTime } from '../fetch-utils.js';
 import { renderMessage } from '../render-utils.js';
 
 // DOM
@@ -15,7 +15,6 @@ const messageList = document.getElementById('message-list');
 
 let error = null;
 let room = null;
-const user = getUser();
 
 // Events
 
@@ -41,7 +40,6 @@ window.addEventListener('load', async () => {
     realTime(room.id, async (payload) => {
         const messageId = payload.new.id;
         const chatResponse = await getMessage(messageId);
-        console.log(chatResponse);
         error = chatResponse.error;
         if (error) {
             displayError();
@@ -58,11 +56,10 @@ messageForm.addEventListener('submit', async (e) => {
 
     const formData = new FormData(messageForm);
     const insertMessage = {
-        message: formData.get('message, profiles'),
-        profiles: formData.get('message.profiles'),
+        message: formData.get('message'),
+        // profiles: formData.get('message.profiles'),
         room_id: room.id,
     };
-    console.log('message.profiles');
 
     const response = await createMessage(insertMessage);
     error = response.error;
@@ -89,7 +86,7 @@ function displayRoom() {
 function displayMessages() {
     messageList.innerHTML = '';
     for (const message of room.chat) {
-        const messageEl = renderMessage(message, user.id);
+        const messageEl = renderMessage(message);
         messageList.append(messageEl);
     }
 }

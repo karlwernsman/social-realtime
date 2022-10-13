@@ -53,7 +53,7 @@ export async function getRooms() {
 export async function getRoom(id) {
     return await client
         .from('rooms')
-        .select('*, chat(*)')
+        .select('*, chat(*,profiles(*))')
         .eq('id', id)
         .order('created_at', { foreignTable: 'chat', ascending: false })
         .single();
@@ -68,7 +68,7 @@ export function realTime(roomId, messageUpload) {
 }
 
 export async function getMessage(id) {
-    return await client.from('chat').select('*, profiles(*)').eq('id', id).single();
+    return await client.from('chat').select('*, profiles()').eq('id', id).single();
 }
 
 // profiles
