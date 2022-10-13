@@ -15,7 +15,7 @@
             defer
             src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
         ></script>
-        <script type="module" src="chatroom.js"></script>
+        <script type="module" src="profile.js"></script>
 
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,34 +29,39 @@
         <link rel="stylesheet" href="../styles/reset.css" />
         <link rel="stylesheet" href="../styles/global.css" />
         <!-- add link for page specific css -->
-        <link rel="stylesheet" href="../styles/chatroom.css" />
+        <link rel="stylesheet" href="../styles/form.css" />
     </head>
 
     <body>
         <header class="page-header">
             <img class="logo" src="../assets/logo.png" alt="logo" />
-            <p class="title">Welcome to the chat room!</p>
+            <p class="title">Profile</p>
             <nav>
                 <a href="../">Home</a>
-                <a href="../add-room">Add room</a>
-                <a href="/profile/">Edit Profile</a>
                 <a id="sign-out-link" href="auth">Sign Out</a>
             </nav>
         </header>
 
         <main>
-            <section class="room-section">
-                <h2 id="room-name">Title</h2>
-                <p id="room-description">I'm hungry</p>
-                <img id="room-image" src="../assets/placeholder.png" />
-            </section>
-            <ul id="message-list"></ul>
-            <div>
-                <form id="message-form">
-                    <input name="message" placeholder="Type Here.." />
-                    <button>Send</button>
-                </form>
-            </div>
+            <form id="profile-form">
+                <label>
+                    Username
+                    <input name="username" required placeholder="Create a username.." />
+                </label>
+                <label>
+                    Pronouns
+                    <input name="pronouns" placeholder="Add your pronouns here" />
+                </label>
+                <label>
+                    Bio
+                    <textarea name="bio" placeholder="Tell us some more about yourself"></textarea>
+                </label>
+                <label>
+                    <input type="file" id="image-input" name="image" />
+                </label>
+                <img id="preview" src="../assets/avatar-preview.png" />
+                <button id="update-profile-button">Update Profile</button>
+            </form>
             <p id="error-display"></p>
         </main>
     </body>

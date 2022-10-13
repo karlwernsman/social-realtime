@@ -70,3 +70,18 @@ export function realTime(roomId, messageUpload) {
 export async function getMessage(id) {
     return await client.from('chat').select('*').eq('id', id).single();
 }
+
+// profiles
+
+export async function updateProfile(userId, profile) {
+    return await client.from('profiles').upsert(profile).single();
+}
+
+export async function getProfile(user_id) {
+    const response = await client.from('profiles').select().match({ user_id }).maybeSingle();
+    return response;
+}
+
+export async function getProfiles() {
+    return await client.from('profiles').select();
+}
