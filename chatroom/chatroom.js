@@ -39,7 +39,9 @@ window.addEventListener('load', async () => {
     }
     realTime(room.id, async (payload) => {
         const messageId = payload.new.id;
+        console.log('before');
         const chatResponse = await getMessage(messageId);
+        console.log('after');
         error = chatResponse.error;
         if (error) {
             displayError();
@@ -57,10 +59,8 @@ messageForm.addEventListener('submit', async (e) => {
     const formData = new FormData(messageForm);
     const insertMessage = {
         message: formData.get('message'),
-        // profiles: formData.get('message.profiles'),
         room_id: room.id,
     };
-
     const response = await createMessage(insertMessage);
     error = response.error;
 
