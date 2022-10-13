@@ -19,9 +19,21 @@ export function renderRoom(room) {
     return li;
 }
 
-export function renderMessage(message) {
+export function renderMessage(message, profiles) {
     const li = document.createElement('li');
-    li.textContent = message.message;
 
+    // const img = document.createElement('img');
+    // img.src = message.profiles.image_url;
+
+    const p1 = document.createElement('p');
+    p1.textContent = profiles.username;
+
+    // const p2 = document.createElement('p');
+    // p2.textContent = profile.pronouns;
+
+    const p3 = document.createElement('p');
+    p3.textContent = message.message;
+
+    li.append(p1, p3);
     return li;
 }

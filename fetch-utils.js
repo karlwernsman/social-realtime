@@ -68,7 +68,7 @@ export function realTime(roomId, messageUpload) {
 }
 
 export async function getMessage(id) {
-    return await client.from('chat').select('*').eq('id', id).single();
+    return await client.from('chat').select('*, profiles(*)').eq('id', id).single();
 }
 
 // profiles
