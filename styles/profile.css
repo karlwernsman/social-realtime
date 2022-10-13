@@ -1,0 +1,19 @@
+#profile-form {
+    background: floralwhite;
+    border: darkolivegreen 7px outset;
+    min-height: 600px;
+    align-items: center;
+    border-radius: 25px;
+}
+
+#preview {
+    width: 175px;
+    object-fit: contain;
+    justify-self: center;
+}
+
+#update-profile-button {
+    width: 300px;
+    justify-self: center;
+    background-color: darkolivegreen;
+}
