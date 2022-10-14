@@ -49,7 +49,7 @@ button {
 }
 
 #message-list li {
-    background: rgb(249, 248, 245);
+    /* background: rgb(249, 248, 245); */
     margin: 10px;
     padding: 15px;
     border-radius: 25px;
@@ -95,5 +95,8 @@ button {
 }
 
 .message {
-    display: flex;
+    background: rgb(249, 248, 245);
+    border-radius: 25px;
+    width: fit-content;
+    padding: 10px;
 }

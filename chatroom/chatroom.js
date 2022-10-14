@@ -39,9 +39,7 @@ window.addEventListener('load', async () => {
     }
     realTime(room.id, async (payload) => {
         const messageId = payload.new.id;
-        console.log('before');
         const chatResponse = await getMessage(messageId);
-        console.log('after');
         error = chatResponse.error;
         if (error) {
             displayError();
