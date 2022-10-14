@@ -21,32 +21,32 @@ export function renderRoom(room) {
 
 export function renderMessage(message) {
     const li = document.createElement('li');
+    li.textContent = message.message;
+    li.classList.add('message');
+    // const div = document.createElement('div');
+    // div.classList.add('div');
 
-    const div = document.createElement('div');
-    div.classList.add('div');
+    // const div2 = document.createElement('div');
+    // div2.classList.add('div2');
 
-    const div2 = document.createElement('div');
-    div2.classList.add('div2');
+    // const img = document.createElement('img');
+    // img.src = message.profiles.image_url;
+    // img.classList.add('avatar');
 
-    const img = document.createElement('img');
-    img.src = message.profiles.image_url;
-    img.classList.add('avatar');
+    // const p1 = document.createElement('p');
+    // p1.textContent = message.profiles.username;
+    // p1.classList.add('username');
 
-    const p1 = document.createElement('p');
-    p1.textContent = message.profiles.username;
-    p1.classList.add('username');
-    console.log(message.profiles.username);
+    // const p2 = document.createElement('p');
+    // p2.textContent = message.profiles.pronouns;
+    // p2.classList.add('pronouns');
 
-    const p2 = document.createElement('p');
-    p2.textContent = message.profiles.pronouns;
-    p2.classList.add('pronouns');
+    // const p3 = document.createElement('p');
+    // p3.textContent = message.message;
+    // p3.classList.add('message');
 
-    const p3 = document.createElement('p');
-    p3.textContent = message.message;
-    p3.classList.add('message');
-
-    div2.append(p1, p2);
-    div.append(img, div2);
-    li.append(div, p3);
+    // div2.append(p1, p2);
+    // div.append(img, div2);
+    // li.append(div, p3);
     return li;
 }
