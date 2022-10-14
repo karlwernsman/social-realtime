@@ -30,7 +30,7 @@ export function renderMessage(message) {
     div2.classList.add('div2');
 
     const img = document.createElement('img');
-    img.src = profile.image_url;
+    img.src = message.profiles.image_url;
     img.classList.add('avatar');
 
     const p1 = document.createElement('p');
