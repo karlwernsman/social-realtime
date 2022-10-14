@@ -21,7 +21,6 @@ export function renderRoom(room) {
 
 export function renderMessage(message) {
     const li = document.createElement('li');
-    const profile = message.profiles;
 
     const div = document.createElement('div');
     div.classList.add('div');
@@ -34,11 +33,11 @@ export function renderMessage(message) {
     img.classList.add('avatar');
 
     const p1 = document.createElement('p');
-    p1.textContent = profile.username;
+    p1.textContent = message.profiles.username;
     p1.classList.add('username');
 
     const p2 = document.createElement('p');
-    p2.textContent = profile.pronouns;
+    p2.textContent = message.profiles.pronouns;
     p2.classList.add('pronouns');
 
     const p3 = document.createElement('p');
