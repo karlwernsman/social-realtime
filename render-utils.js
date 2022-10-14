@@ -35,6 +35,7 @@ export function renderMessage(message) {
     const p1 = document.createElement('p');
     p1.textContent = message.profiles.username;
     p1.classList.add('username');
+    console.log(message.profiles.username);
 
     const p2 = document.createElement('p');
     p2.textContent = message.profiles.pronouns;

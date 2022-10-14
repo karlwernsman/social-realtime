@@ -6,7 +6,7 @@ import { createRoom, uploadImage } from '../fetch-utils.js';
 const addRoomForm = document.getElementById('add-room-form');
 const errorDisplay = document.getElementById('error-display');
 const imageInput = document.getElementById('image-input');
-const imagePlaceholder = document.getElementById('image-placeholder');
+const imagePlaceholder = document.getElementById('preview');
 
 // State
 let error = null;
